@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Hole - Gallery</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/logos/logo.webp">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<!-- ===================== NAVBAR ===================== -->
+
+<header class="navbar">
+
+    <div class="nav-left">
+
+        <div class="logo">
+            <img src="assets/logos/logo.webp" alt="Black Hole Logo">
+        </div>
+
+        <h2 class="brand">Black Hole</h2>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Black Hole">
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button title="Messages">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+
+        <div class="notif-wrapper">
+
+            <button title="Notifications" id="notif-toggle">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge notif-count">3</span>
+            </button>
+
+            <div class="notif-dropdown hidden" id="notif-dropdown">
+
+                <div class="notif-header">Notifications</div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>María</strong> liked your post "Future Goals"
+                        <span>2 min ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Carlos</strong> commented on your photo
+                        <span>1 hour ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Ana</strong> sent you a connection request
+                        <span>Yesterday</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button title="Settings">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ===================== MAIN ===================== -->
+
+<main>
+
+<aside class="left-sidebar">
+
+<ul>
+
+<li><a href="posts.html"><i class="fa-solid fa-house"></i> Feed</a></li>
+<li><a href="index.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+<li><a href="connections.html"><i class="fa-solid fa-user-group"></i> Connections</a></li>
+<li><a href="explore.html"><i class="fa-solid fa-compass"></i> Explore</a></li>
+<li><a href="gallery.html" class="active"><i class="fa-solid fa-photo-film"></i> Gallery</a></li>
+
+</ul>
+
+</aside>
+
+<section class="content">
+
+<div class="page-heading reveal">
+    <h1>Gallery</h1>
+    <p>Personal photos from Rodrigo Rodríguez</p>
+</div>
+
+<div class="gallery-masonry">
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery1.jpeg" alt="Gallery photo 1" onerror="mediaFallback(this,'gallery1.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery2.jpeg" alt="Gallery photo 2" onerror="mediaFallback(this,'gallery2.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery3.jpeg" alt="Gallery photo 3" onerror="mediaFallback(this,'gallery3.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery4.jpeg" alt="Gallery photo 4" onerror="mediaFallback(this,'gallery4.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery5.jpeg" alt="Gallery photo 5" onerror="mediaFallback(this,'gallery5.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery6.jpeg" alt="Gallery photo 6" onerror="mediaFallback(this,'gallery6.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery7.jpeg" alt="Gallery photo 7" onerror="mediaFallback(this,'gallery7.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery8.jpeg" alt="Gallery photo 8" onerror="mediaFallback(this,'gallery8.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery9.jpeg" alt="Gallery photo 9" onerror="mediaFallback(this,'gallery9.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery10.jpeg" alt="Gallery photo 10" onerror="mediaFallback(this,'gallery10.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery11.jpeg" alt="Gallery photo 11" onerror="mediaFallback(this,'gallery11.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery12.jpeg" alt="Gallery photo 12" onerror="mediaFallback(this,'gallery12.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery13.jpeg" alt="Gallery photo 13" onerror="mediaFallback(this,'gallery13.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery14.jpeg" alt="Gallery photo 14" onerror="mediaFallback(this,'gallery14.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery15.jpeg" alt="Gallery photo 15" onerror="mediaFallback(this,'gallery15.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery16.jpeg" alt="Gallery photo 16" onerror="mediaFallback(this,'gallery16.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery17.jpeg" alt="Gallery photo 17" onerror="mediaFallback(this,'gallery17.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery18.jpeg" alt="Gallery photo 18" onerror="mediaFallback(this,'gallery18.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery19.jpeg" alt="Gallery photo 19" onerror="mediaFallback(this,'gallery19.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery20.jpeg" alt="Gallery photo 20" onerror="mediaFallback(this,'gallery20.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery21.jpeg" alt="Gallery photo 21" onerror="mediaFallback(this,'gallery21.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery22.jpeg" alt="Gallery photo 22" onerror="mediaFallback(this,'gallery22.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery23.jpeg" alt="Gallery photo 23" onerror="mediaFallback(this,'gallery23.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery24.jpeg" alt="Gallery photo 24" onerror="mediaFallback(this,'gallery24.jpeg')">
+</div>
+
+<div class="gallery-item reveal">
+    <img src="assets/gallery/gallery25.jpeg" alt="Gallery photo 25" onerror="mediaFallback(this,'gallery25.jpeg')">
+</div>
+
+</div>
+
+</section>
+
+<aside class="right-sidebar">
+
+<div class="card" style="padding:20px">
+<h2>Trending</h2>
+<p>#BlackHole</p>
+<p>#Portfolio</p>
+<p>#WebDesign</p>
+<p>#StudentLife</p>
+</div>
+
+</aside>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

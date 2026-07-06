@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Hole - Connections</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/logos/logo.webp">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<!-- ===================== NAVBAR ===================== -->
+
+<header class="navbar">
+
+    <div class="nav-left">
+
+        <div class="logo">
+            <img src="assets/logos/logo.webp" alt="Black Hole Logo">
+        </div>
+
+        <h2 class="brand">Black Hole</h2>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Black Hole">
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button title="Messages">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+
+        <div class="notif-wrapper">
+
+            <button title="Notifications" id="notif-toggle">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge notif-count">3</span>
+            </button>
+
+            <div class="notif-dropdown hidden" id="notif-dropdown">
+
+                <div class="notif-header">Notifications</div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>María</strong> liked your post "Future Goals"
+                        <span>2 min ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Carlos</strong> commented on your photo
+                        <span>1 hour ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Ana</strong> sent you a connection request
+                        <span>Yesterday</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button title="Settings">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ===================== MAIN ===================== -->
+
+<main>
+
+<aside class="left-sidebar">
+
+<ul>
+
+<li><a href="posts.html"><i class="fa-solid fa-house"></i> Feed</a></li>
+<li><a href="index.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+<li><a href="connections.html" class="active"><i class="fa-solid fa-user-group"></i> Connections</a></li>
+<li><a href="explore.html"><i class="fa-solid fa-compass"></i> Explore</a></li>
+<li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Gallery</a></li>
+
+</ul>
+
+</aside>
+
+<section class="content">
+
+<div class="page-heading reveal">
+    <h1>People you may know</h1>
+    <p>Based on your connections and activity on Black Hole</p>
+</div>
+
+<div class="suggestions-grid">
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile1.jpeg" alt="Camila Torres" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Camila Torres</h3>
+        <span>4 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile2.jpeg" alt="Diego Martínez" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Diego Martínez</h3>
+        <span>12 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile3.jpeg" alt="Sofía Hernández" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Sofía Hernández</h3>
+        <span>7 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile4.jpeg" alt="Julián Pérez" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Julián Pérez</h3>
+        <span>2 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile5.jpeg" alt="Valentina Gómez" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Valentina Gómez</h3>
+        <span>9 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile6.jpeg" alt="Mateo Sánchez" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Mateo Sánchez</h3>
+        <span>15 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile7.jpeg" alt="Isabella Ramírez" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Isabella Ramírez</h3>
+        <span>3 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile8.jpeg" alt="Sebastián Flores" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Sebastián Flores</h3>
+        <span>6 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile9.jpeg" alt="Renata Cruz" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Renata Cruz</h3>
+        <span>11 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile10.jpeg" alt="Emiliano Rivera" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Emiliano Rivera</h3>
+        <span>1 mutual friend</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile11.jpeg" alt="Ximena Morales" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Ximena Morales</h3>
+        <span>8 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile12.jpeg" alt="Álvaro Jiménez" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Álvaro Jiménez</h3>
+        <span>5 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile13.jpeg" alt="Fernanda Ortiz" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Fernanda Ortiz</h3>
+        <span>14 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile14.jpeg" alt="Leonardo Castillo" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Leonardo Castillo</h3>
+        <span>10 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile15.jpeg" alt="Daniela Reyes" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Daniela Reyes</h3>
+        <span>3 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile16.jpeg" alt="Adrián Vargas" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Adrián Vargas</h3>
+        <span>9 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile17.jpeg" alt="Paola Mendoza" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Paola Mendoza</h3>
+        <span>6 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile18.jpeg" alt="Ricardo Guzmán" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Ricardo Guzmán</h3>
+        <span>2 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile19.jpeg" alt="Natalia Aguilar" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Natalia Aguilar</h3>
+        <span>13 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile20.jpeg" alt="Iván Delgado" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Iván Delgado</h3>
+        <span>7 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile21.jpeg" alt="Montserrat Salazar" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Montserrat Salazar</h3>
+        <span>5 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile22.jpeg" alt="Gael Navarro" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Gael Navarro</h3>
+        <span>10 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile23.jpeg" alt="Ariana Campos" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Ariana Campos</h3>
+        <span>4 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile24.jpeg" alt="Tomás Rojas" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Tomás Rojas</h3>
+        <span>8 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile25.jpeg" alt="Lucía Ibarra" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Lucía Ibarra</h3>
+        <span>2 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile26.jpeg" alt="Bruno Contreras" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Bruno Contreras</h3>
+        <span>12 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile27.jpeg" alt="Regina Paredes" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Regina Paredes</h3>
+        <span>6 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile28.jpeg" alt="Kevin Fuentes" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Kevin Fuentes</h3>
+        <span>3 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile29.jpeg" alt="Andrea Solís" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Andrea Solís</h3>
+        <span>9 mutual friends</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+<div class="suggestion-card reveal">
+    <div class="suggestion-photo">
+        <img src="assets/profile/profile30.jpeg" alt="Rodrigo Peña" onerror="this.parentElement.parentElement.querySelector('.suggestion-photo').style.background='var(--surface-light)'; this.remove()">
+    </div>
+    <div class="suggestion-info">
+        <h3>Rodrigo Peña</h3>
+        <span>1 mutual friend</span>
+    </div>
+    <div class="suggestion-actions">
+        <button class="btn-connect"><i class="fa-solid fa-user-plus"></i> Connect</button>
+        <button class="btn-remove"><i class="fa-solid fa-xmark"></i> Remove</button>
+    </div>
+</div>
+
+</div>
+
+</section>
+
+<aside class="right-sidebar">
+
+<div class="card" style="padding:20px">
+<h2>Trending</h2>
+<p>#BlackHole</p>
+<p>#Portfolio</p>
+<p>#WebDesign</p>
+<p>#StudentLife</p>
+</div>
+
+</aside>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

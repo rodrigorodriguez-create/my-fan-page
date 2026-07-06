@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Hole</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/logos/logo.webp">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<!-- ===================== NAVBAR ===================== -->
+
+<header class="navbar">
+
+    <div class="nav-left">
+
+        <div class="logo">
+            <img src="assets/logos/logo.webp" alt="Black Hole Logo">
+        </div>
+
+        <h2 class="brand">Black Hole</h2>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Black Hole">
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button title="Messages">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+
+        <div class="notif-wrapper">
+
+            <button title="Notifications" id="notif-toggle">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge notif-count">3</span>
+            </button>
+
+            <div class="notif-dropdown hidden" id="notif-dropdown">
+
+                <div class="notif-header">Notifications</div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>María</strong> liked your post "Future Goals"
+                        <span>2 min ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Carlos</strong> commented on your photo
+                        <span>1 hour ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Ana</strong> sent you a connection request
+                        <span>Yesterday</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button title="Settings">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ===================== MAIN ===================== -->
+
+<main>
+
+<aside class="left-sidebar">
+
+<ul>
+
+<li><a href="posts.html"><i class="fa-solid fa-house"></i> Feed</a></li>
+<li><a href="index.html" class="active"><i class="fa-solid fa-user"></i> Profile</a></li>
+<li><a href="connections.html"><i class="fa-solid fa-user-group"></i> Connections</a></li>
+<li><a href="explore.html"><i class="fa-solid fa-compass"></i> Explore</a></li>
+<li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Gallery</a></li>
+
+</ul>
+
+</aside>
+
+<section class="content">
+<!-- PART 2 STARTS HERE -->
+<!-- ===================== PROFILE ===================== -->
+
+<div class="cover">
+
+    <div class="cover-photo">
+        <img src="assets/profile/foto_portada.jpeg" alt="Cover" class="w-100">
+    </div>
+
+    <div class="profile-info">
+
+        <div class="profile-picture">
+            <img src="assets/profile/foto_perfil.jpeg" alt="Profile">
+        </div>
+
+        <div class="profile-text">
+            <h1>Rodrigo Rodríguez</h1>
+            <p>Programmer • Horseback Rider • Gardener</p>
+            <span>From Rincón de Romos, Aguascalientes.</span>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="content-grid">
+
+    <aside>
+
+        <section class="intro">
+            <h2>About Me</h2>
+
+            <ul>
+                <li><i class="fa-solid fa-graduation-cap"></i> Technical degree in Programming</li>
+                <li><i class="fa-solid fa-horse"></i> Horseback riding</li>
+                <li><i class="fa-solid fa-seedling"></i> Gardening &amp; fruit trees</li>
+                <li><i class="fa-solid fa-location-dot"></i> Rincón de Romos, Aguascalientes</li>
+            </ul>
+        </section>
+
+        <section class="friends-preview">
+            <a href="connections.html"><h2>Connections</h2></a>
+
+            <a href="connections.html" class="friend-item">
+                <div class="friend-avatar"><img src="assets/profile/profile1.jpeg" alt="Camila Torres" onerror="this.remove()"></div>
+                <span>Camila Torres</span>
+            </a>
+
+            <a href="connections.html" class="friend-item">
+                <div class="friend-avatar"><img src="assets/profile/profile2.jpeg" alt="Diego Martínez" onerror="this.remove()"></div>
+                <span>Diego Martínez</span>
+            </a>
+
+            <a href="connections.html" class="friend-item">
+                <div class="friend-avatar"><img src="assets/profile/profile3.jpeg" alt="Sofía Hernández" onerror="this.remove()"></div>
+                <span>Sofía Hernández</span>
+            </a>
+
+        </section>
+
+        <section class="photos-preview">
+
+            <a href="gallery.html"><h2>Gallery</h2></a>
+
+            <div class="grid-photos">
+                <div class="photo-placeholder"><img src="assets/gallery/gallery1.jpeg" alt="Gallery photo 1" onerror="this.remove()"></div>
+                <div class="photo-placeholder"><img src="assets/gallery/gallery2.jpeg" alt="Gallery photo 2" onerror="this.remove()"></div>
+                <div class="photo-placeholder"><img src="assets/gallery/gallery3.jpeg" alt="Gallery photo 3" onerror="this.remove()"></div>
+                <div class="photo-placeholder"><img src="assets/gallery/gallery4.jpeg" alt="Gallery photo 4" onerror="this.remove()"></div>
+                <div class="photo-placeholder"><img src="assets/gallery/gallery5.jpeg" alt="Gallery photo 5" onerror="this.remove()"></div>
+                <div class="photo-placeholder"><img src="assets/gallery/gallery6.jpeg" alt="Gallery photo 6" onerror="this.remove()"></div>
+            </div>
+
+        </section>
+
+    </aside>
+
+    <section class="posts">
+
+<!-- PART 3 STARTS HERE -->
+<!-- ===================== POSTS ===================== -->
+
+<article class="create-post card">
+    <div class="create-post-top">
+        <div class="post-avatar">
+            <img src="assets/profile/foto_perfil.jpeg" alt="Profile">
+        </div>
+        <input type="text" placeholder="Share something with the universe...">
+    </div>
+    <hr>
+    <div class="create-actions">
+        <button><i class="fa-solid fa-pen"></i> Post</button>
+        <button><i class="fa-solid fa-image"></i> Photo</button>
+        <button><i class="fa-solid fa-face-smile"></i> Feeling</button>
+    </div>
+</article>
+
+<article class="post reveal">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/foto_perfil.jpeg" alt=""></div>
+        <div class="post-user">
+            <h3>Rodrigo Rodríguez</h3>
+            <span>Just now · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <h2>About Me</h2>
+        <p>I was born in Rincón de Romos, Aguascalientes. My favorite food is green enchiladas, and my favorite colors are purple and orange. I like activities such as horseback riding and gardening — I enjoy planting fruit trees and flowers like pumpkins, tulips, and marigolds (cempasúchil). I don't like going to parties, and I don't like liver with onions.</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>128</span>
+        </div>
+        <span>18 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/foto_perfil.jpeg" alt=""></div>
+        <div class="post-user">
+            <h3>Rodrigo Rodríguez</h3>
+            <span>2 days ago · 🌎</span>
+        </div>
+    </div>
+
+    <div class="post-content">
+        <h2>Past Habits</h2>
+        <ul class="post-list">
+            <li>I used to play with my cousins in the street.</li>
+            <li>We would play at the arcade, rent an Xbox, and play with tazos, marbles, and spinning tops.</li>
+            <li>We would ride our bikes to the hill and to my ranch, where we liked to ride young calves.</li>
+            <li>I used to draw pretty well, but I don't draw as often now.</li>
+            <li>I used to practice swimming, and I used to watch shows like Adventure Time, Regular Show, and The Amazing World of Gumball.</li>
+        </ul>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>96</span>
+        </div>
+        <span>12 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/foto_perfil.jpeg" alt=""></div>
+        <div class="post-user">
+            <h3>Rodrigo Rodríguez</h3>
+            <span>3 days ago · 🌎</span>
+        </div>
+    </div>
+
+    <div class="post-content">
+        <h2>Things I Have Done</h2>
+        <ul class="post-list">
+            <li>I have visited La Sierra Fría many times — it's one of my favorite places.</li>
+            <li>I have visited Ixtapa Zihuatanejo.</li>
+            <li>I have earned a technical degree in programming.</li>
+            <li>I have learned how to ride horses.</li>
+            <li>I have won badminton tournaments, although I haven't played in years.</li>
+            <li>I have raised several head of cattle.</li>
+        </ul>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>142</span>
+        </div>
+        <span>20 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/foto_perfil.jpeg" alt=""></div>
+        <div class="post-user">
+            <h3>Rodrigo Rodríguez</h3>
+            <span>Yesterday · 🌎</span>
+        </div>
+    </div>
+
+    <div class="post-content">
+        <h2>Future Goals</h2>
+        <ul class="post-list">
+            <li>I must be building a collection of classic cars, like a Mustang, a Camaro, a Chevelle, a Monte Carlo, a Shelby Cobra, a Ford F-150, and a Chevrolet Custom Deluxe.</li>
+            <li>I must be practicing medicine, and I might have my own private clinic.</li>
+            <li>I must be living on a hacienda with fine horses, right here where I live now.</li>
+            <li>If not, I might be living in a snowy, isolated place in Europe, far from people.</li>
+            <li>I must be starting a family and I might have a daughter.</li>
+            <li>Above all, I must be finally finding happiness.</li>
+        </ul>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+    </section>
+</div>
+
+<aside class="right-sidebar">
+
+<div class="card" style="padding:20px">
+<h2>Trending</h2>
+<p>#BlackHole</p>
+<p>#Portfolio</p>
+<p>#WebDesign</p>
+<p>#StudentLife</p>
+</div>
+
+</aside>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

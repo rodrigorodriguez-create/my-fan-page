@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Hole - Explore</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/logos/logo.webp">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+
+<!-- ===================== NAVBAR ===================== -->
+
+<header class="navbar">
+
+    <div class="nav-left">
+
+        <div class="logo">
+            <img src="assets/logos/logo.webp" alt="Black Hole Logo">
+        </div>
+
+        <h2 class="brand">Black Hole</h2>
+
+        <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search Black Hole">
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button title="Messages">
+            <i class="fa-solid fa-comments"></i>
+        </button>
+
+        <div class="notif-wrapper">
+
+            <button title="Notifications" id="notif-toggle">
+                <i class="fa-solid fa-bell"></i>
+                <span class="badge notif-count">3</span>
+            </button>
+
+            <div class="notif-dropdown hidden" id="notif-dropdown">
+
+                <div class="notif-header">Notifications</div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>María</strong> liked your post "Future Goals"
+                        <span>2 min ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Carlos</strong> commented on your photo
+                        <span>1 hour ago</span>
+                    </div>
+                </div>
+
+                <div class="notif-item">
+                    <div class="notif-avatar"></div>
+                    <div class="notif-text">
+                        <strong>Ana</strong> sent you a connection request
+                        <span>Yesterday</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button title="Settings">
+            <i class="fa-solid fa-gear"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ===================== MAIN ===================== -->
+
+<main>
+
+<aside class="left-sidebar">
+
+<ul>
+
+<li><a href="posts.html"><i class="fa-solid fa-house"></i> Feed</a></li>
+<li><a href="index.html"><i class="fa-solid fa-user"></i> Profile</a></li>
+<li><a href="connections.html"><i class="fa-solid fa-user-group"></i> Connections</a></li>
+<li><a href="explore.html" class="active"><i class="fa-solid fa-compass"></i> Explore</a></li>
+<li><a href="gallery.html"><i class="fa-solid fa-photo-film"></i> Gallery</a></li>
+
+</ul>
+
+</aside>
+
+<section class="content">
+
+<div class="page-heading reveal">
+    <h1>Explore</h1>
+    <p>New voices and posts from across Black Hole</p>
+</div>
+
+<div class="posts">
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile31.jpeg" alt="Emilia Sandoval" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Emilia Sandoval</h3>
+            <span>Just now · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post31.jpeg" alt="Post by Emilia Sandoval" onerror="mediaFallback(this,'post31.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>22</span>
+        </div>
+        <span>4 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile32.jpeg" alt="Joaquín Herrera" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Joaquín Herrera</h3>
+            <span>10 minutes ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>new semester who dis</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>39</span>
+        </div>
+        <span>7 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile33.jpeg" alt="Renata Cabrera" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Renata Cabrera</h3>
+            <span>30 minutes ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post32.jpeg" alt="Post by Renata Cabrera" onerror="mediaFallback(this,'post33.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>56</span>
+        </div>
+        <span>10 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile34.jpeg" alt="Maximiliano Duarte" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Maximiliano Duarte</h3>
+            <span>1 hour ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>gym then tacos, balance</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>73</span>
+        </div>
+        <span>13 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile35.jpeg" alt="Antonella Ríos" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Antonella Ríos</h3>
+            <span>3 hours ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>rainy days hit different</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>90</span>
+        </div>
+        <span>16 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile36.jpeg" alt="Cristian Lozano" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Cristian Lozano</h3>
+            <span>6 hours ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post33.jpeg" alt="Post by Cristian Lozano" onerror="mediaFallback(this,'post36.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>107</span>
+        </div>
+        <span>19 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile37.jpeg" alt="Paulina Escobar" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Paulina Escobar</h3>
+            <span>Yesterday · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>can we talk about how expensive everything is</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>124</span>
+        </div>
+        <span>4 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile38.jpeg" alt="Nicolás Vega" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Nicolás Vega</h3>
+            <span>2 days ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post34.jpeg" alt="Post by Nicolás Vega" onerror="mediaFallback(this,'post38.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>141</span>
+        </div>
+        <span>7 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile39.jpeg" alt="Abril Montes" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Abril Montes</h3>
+            <span>3 days ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>finally finished that assignment</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>158</span>
+        </div>
+        <span>10 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile40.jpeg" alt="Santiago Cordero" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Santiago Cordero</h3>
+            <span>4 days ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>3am thoughts are the best thoughts</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>175</span>
+        </div>
+        <span>13 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile41.jpeg" alt="Ximena Alcaraz" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Ximena Alcaraz</h3>
+            <span>5 days ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post35.jpeg" alt="Post by Ximena Alcaraz" onerror="mediaFallback(this,'post41.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>192</span>
+        </div>
+        <span>16 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile42.jpeg" alt="Emiliano Nava" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Emiliano Nava</h3>
+            <span>1 week ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>missing summer already</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>209</span>
+        </div>
+        <span>19 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile43.jpeg" alt="Valeria Cisneros" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Valeria Cisneros</h3>
+            <span>2 weeks ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>who else procrastinates until the last minute</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>226</span>
+        </div>
+        <span>4 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile44.jpeg" alt="Rodrigo Espinoza" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Rodrigo Espinoza</h3>
+            <span>3 weeks ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post36.jpeg" alt="Post by Rodrigo Espinoza" onerror="mediaFallback(this,'post44.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>243</span>
+        </div>
+        <span>7 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile45.jpeg" alt="Camila Bautista" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Camila Bautista</h3>
+            <span>Just now · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>new plant just dropped 🌱</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>260</span>
+        </div>
+        <span>10 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile46.jpeg" alt="Diego Zamora" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Diego Zamora</h3>
+            <span>10 minutes ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>monday energy: zero</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>277</span>
+        </div>
+        <span>13 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile47.jpeg" alt="Luciana Prado" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Luciana Prado</h3>
+            <span>30 minutes ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post37.jpeg" alt="Post by Luciana Prado" onerror="mediaFallback(this,'post47.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>294</span>
+        </div>
+        <span>16 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile48.jpeg" alt="Mauricio Villegas" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Mauricio Villegas</h3>
+            <span>1 hour ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>road trip vibes</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>311</span>
+        </div>
+        <span>19 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post text-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile49.jpeg" alt="Daniela Cortés" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Daniela Cortés</h3>
+            <span>3 hours ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <p>current mood: sleepy</p>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span>328</span>
+        </div>
+        <span>4 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+<article class="post reveal feed-post">
+    <div class="post-header">
+        <div class="post-avatar"><img src="assets/profile/profile50.jpeg" alt="Fernando Bravo" onerror="this.remove()"></div>
+        <div class="post-user">
+            <h3>Fernando Bravo</h3>
+            <span>6 hours ago · 🌎</span>
+        </div>
+        <button class="post-menu"><i class="fa-solid fa-ellipsis"></i></button>
+    </div>
+
+    <div class="post-content">
+        <div class="post-image"><img src="assets/posts/post38.jpeg" alt="Post by Fernando Bravo" onerror="mediaFallback(this,'post50.jpeg')"></div>
+    </div>
+
+    <div class="post-stats">
+        <div class="reactions">
+            <span class="reaction like">👍</span>
+            <span class="reaction love">❤</span>
+            <span>345</span>
+        </div>
+        <span>7 comments</span>
+    </div>
+
+    <div class="post-actions">
+        <button>👍 Like</button>
+        <button>💬 Comment</button>
+        <button>↗ Share</button>
+    </div>
+
+    <div class="comments hidden">
+        <div class="comment-list"></div>
+        <div class="comment-form">
+            <div class="comment-avatar"></div>
+            <input type="text" class="comment-input" placeholder="Write a comment...">
+        </div>
+    </div>
+</article>
+
+</div>
+
+</section>
+
+<aside class="right-sidebar">
+
+<div class="card" style="padding:20px">
+<h2>Trending</h2>
+<p>#BlackHole</p>
+<p>#Portfolio</p>
+<p>#WebDesign</p>
+<p>#StudentLife</p>
+</div>
+
+</aside>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
